@@ -9,27 +9,52 @@
 </div>
 
 <div class="container">
-<div class="row">
+
 
 @{
-    var i=1;
-    foreach(Curso curso in cursos){
-    if (i==1 || i%3 == 0){
-       <div class="row">;
-    }
-      <div class="col">
-         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-          <div class="card-header">@curso.TituloInterno</div>
-             <div class="card-body">
-               <h5 class="card-title">@curso.TituloMarketing</h5>
-               <p class="card-text">@curso.Descricao</p>
-            </div>
-         </div>
-      </div> 
-    }
-}
-</div>
 
+    for(var i=0; i <= cursos.Count(); i++){
+        
+        <div class="row">
+          @for (var j=0; j <= 3; j++)
+          {
+            Curso curso = cursos[i];
+            <div class="col">
+              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">@curso.TituloInterno</div>
+                <div class="card-body">
+                  <h5 class="card-title">@curso.TituloMarketing</h5>
+                  <p class="card-text">@curso.Descricao</p>
+                </div>
+              </div>
+            </div>
+            i++; 
+          }
+          
+
+        </div>
+       
+     }
+}
+
+@{
+  foreach(Curso curso in cursos){
+    <div class="row">
+      @for (var i=0; i <=3; i++)
+      {
+        <div class="col">
+              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">@curso.TituloInterno</div>
+                <div class="card-body">
+                  <h5 class="card-title">@curso.TituloMarketing</h5>
+                  <p class="card-text">@curso.Descricao</p>
+                </div>
+              </div>
+        </div>
+      }
+    </div>
+  }
+}
 
   <div class="container">
   <div class="row">
@@ -42,7 +67,8 @@
     <div class="col">
       Column
     </div>
-
+  </div>
+  <div class="row">
     <div class="col">
       Column
     </div>

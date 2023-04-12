@@ -23,8 +23,8 @@ public class CursoController:Controller{
                                           new Curso("Eletricista Instalador Industrial", "Progrida na carreira, trabalhe na industria", "Eletricista Industrial"),
 
                                           new Curso("Panificador", "Trabalhe com massas, pães, bolos e confeitaria", "Panificação"),
-                                          new Curso("Corte e Custura", "Faça roupas arojadas e da moda", "Custura")
-
+                                          new Curso("Corte e Custura", "Faça roupas arojadas e da moda", "Custura"),
+                                          new Curso("Corte e Custura", "Faça roupas arojadas e da moda", "Custura"),
                                          };
     public IActionResult Index(){
         //Curso c1 = new Curso();
@@ -33,5 +33,12 @@ public class CursoController:Controller{
        // c1.TituloMarketing ="Crie Aplicativos Incrivéis";
         ViewData["cursos"] = cursos;
                 return View();
+    }
+
+//Action
+    public IActionResult Create(){
+        ViewData["titulo"] = "Cadastro de Cursos";
+        ViewBag.DataHora = DateTime.Now;
+        return View();
     }    
 }

@@ -1,0 +1,17 @@
+<h1> @ViewData["titulo"]</h1>
+<h6>@ViewBag.DataHora</h6>
+<form type="post" class= "form-control">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo Interno</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome interno do curso">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo de Marketing</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome de Marketing">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrição do curso"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg" type="submit">Registrar Curso</button>
+</form>
