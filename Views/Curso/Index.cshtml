@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Cursos";
+    var cursos = ViewData["cursos"] as List<Curso>;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cursos</h1>
+    <p>Desenvolvedor C# - Senai</p>
+</div>
+
+<div class="container">
+<div class="row">
+
+@{
+  
+    foreach(Curso curso in cursos){
+      <div class="col">
+         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">@curso.TituloInterno</div>
+             <div class="card-body">
+               <h5 class="card-title">@curso.TituloMarketing</h5>
+               <p class="card-text">@curso.Descricao</p>
+            </div>
+         </div>
+      </div> 
+    }
+}
+</div>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
