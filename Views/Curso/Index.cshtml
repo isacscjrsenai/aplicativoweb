@@ -11,36 +11,18 @@
 <div class="container">
 
 
-@{
 
-    for(var i=0; i <= cursos.Count(); i++){
-        
-        <div class="row">
-          @for (var j=0; j <= 3; j++)
-          {
-            Curso curso = cursos[i];
-            <div class="col">
-              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header">@curso.TituloInterno</div>
-                <div class="card-body">
-                  <h5 class="card-title">@curso.TituloMarketing</h5>
-                  <p class="card-text">@curso.Descricao</p>
-                </div>
-              </div>
-            </div>
-            i++; 
-          }
-          
-
-        </div>
-       
-     }
-}
 
 @{
-  foreach(Curso curso in cursos){
+ var size = 3;
+ var subListaCursos = cursos.Select((x, i) => new { Index = i, Value = x })
+                            .GroupBy(x => x.Index / size)
+                            .Select(x => x.Select(v => v.Value).ToList())
+                            .ToList();
+
+  foreach(var sublista in subListaCursos){
     <div class="row">
-      @for (var i=0; i <=3; i++)
+      @foreach(Curso curso in sublista)
       {
         <div class="col">
               <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">

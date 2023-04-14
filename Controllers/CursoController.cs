@@ -23,8 +23,7 @@ public class CursoController:Controller{
                                           new Curso("Eletricista Instalador Industrial", "Progrida na carreira, trabalhe na industria", "Eletricista Industrial"),
 
                                           new Curso("Panificador", "Trabalhe com massas, pães, bolos e confeitaria", "Panificação"),
-                                          new Curso("Corte e Custura", "Faça roupas arojadas e da moda", "Custura"),
-                                          new Curso("Corte e Custura", "Faça roupas arojadas e da moda", "Custura"),
+                                          new Curso("Corte e Costura", "Faça roupas arrojadas e da moda", "Costura"),
                                          };
     public IActionResult Index(){
         //Curso c1 = new Curso();
@@ -41,4 +40,12 @@ public class CursoController:Controller{
         ViewBag.DataHora = DateTime.Now;
         return View();
     }    
+
+    [HttpPost]
+    public IActionResult registraCurso(IFormCollection form){
+        string tituloInterno = form["tituloInterno"];
+        string tituloMarketing = form["tituloMarketing"];
+        string descricaoCurso = form["descricaoCurso"];
+        return View();
+    }
 }
